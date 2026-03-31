@@ -4,7 +4,7 @@ metadata:
   name: frontend
   namespace: gameverse
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: frontend
@@ -15,9 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 509399631926.dkr.ecr.<region>.amazonaws.com/k8s-frontend:latest
+          image: 509399631926.dkr.ecr.us-east-1.amazonaws.com/k8s-frontend:latest
           ports:
             - containerPort: 80
-          env:
-            - name: VITE_API_URL
-              value: "/api"
